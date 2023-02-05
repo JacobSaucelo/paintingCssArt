@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minecraft Painting</title>
+
+    <link rel="stylesheet" href="stylesheet.css" />
+  </head>
+  <body>
+    <div class="frame">
+      <div class="painting" id="paint">
+        <div class="front paint"></div>
+        <div class="back paint"></div>
+        <div class="left paint"></div>
+        <div class="right paint"></div>
+        <div class="top paint"></div>
+        <div class="bottom paint"></div>
+      </div>
+    </div>
+
+    <div class="textsInfo">
+      <h1>Painting</h1>
+      <p>Painting from cs using css.</p>
+      <a href="https://github.com/JacobSaucelo/paintingCssArt">
+        <p>Code: JacobSaucelo/paintingCssArt</p>
+      </a>
+      <a href="https://github.com/JacobSaucelo">
+        <p>Github: github.com/JacobSaucelo</p>
+      </a>
+      <h1>2 - 6 - 23</h1>
+    </div>
+
+    <script>
+      document.addEventListener("mousemove", parallax);
+      const box = document.querySelector("#paint");
+      const limiter = 8;
+
+      function parallax(e) {
+        let boxC = box.getBoundingClientRect();
+        let x = -(e.clientY - boxC.y - boxC.height / 2) / limiter;
+        let y = (e.clientX - boxC.x - boxC.width / 2) / limiter;
+
+        box.style.transform = `rotateX(${x}deg) rotateY(${y}deg)`;
+      }
+    </script>
+  </body>
+</html>

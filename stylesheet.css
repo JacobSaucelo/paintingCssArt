@@ -1,0 +1,103 @@
+/* font-family: 'Bebas Neue', cursive;
+font-family: 'Inter', sans-serif; */
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  overflow: hidden;
+}
+
+body h1 {
+  color: white;
+  font-family: "Bebas Neue", cursive;
+  font-size: 3rem;
+  text-align: center;
+}
+@media screen and (max-width: 600px) {
+  body {
+    flex-direction: column;
+  }
+}
+
+.frame {
+  height: 400px;
+  width: 400px;
+  perspective: 600px;
+}
+
+.painting {
+  transform-style: preserve-3d;
+  height: 100%;
+  width: 100%;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paint {
+  position: absolute;
+}
+
+.front {
+  height: 100px;
+  width: 200px;
+  background: url("painting.webp") center center / cover no-repeat;
+  transform: translateZ(10px);
+}
+
+.back {
+  background: url("side.png") repeat;
+  height: 100px;
+  width: 200px;
+  transform: translateZ(0px);
+}
+
+.right {
+  height: 100px;
+  width: 10px;
+  background: url("side.png") center center / cover no-repeat;
+  transform: translateZ(5px) translateX(100px) rotateY(90deg);
+}
+
+.left {
+  height: 100px;
+  width: 10px;
+  background: url("side.png") center center / cover no-repeat;
+  transform: translateZ(5px) translateX(-100px) rotateY(-90deg);
+}
+
+.top {
+  height: 10px;
+  width: 200px;
+  background: url("side.png") center center / cover no-repeat;
+  transform: translateZ(5px) translateY(-50px) rotateX(-90deg);
+}
+
+.bottom {
+  height: 10px;
+  width: 200px;
+  background: url("side.png") center center / cover no-repeat;
+  transform: translateZ(5px) translateY(50px) rotateX(90deg);
+}
+
+.textsInfo {
+  padding: 1rem;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+.textsInfo p {
+  text-align: center;
+}
+
+.textsInfo h1 {
+  color: #f0db4f;
+}
